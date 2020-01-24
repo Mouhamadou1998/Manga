@@ -2,7 +2,7 @@ import sys #pour recuperer les arguments
 import requests #pour les telechargement 
 import os #pour la creation de repertoir
 import shutil #pour le traitement des fichier
-#from tqdm import tqdm# module de telechergement
+from tqdm import tqdm # module de telechergement
 from bs4 import BeautifulSoup as bs #POUR rechercher des elements specifique dans une page web.
 
 
@@ -22,7 +22,7 @@ def telechargement(url, repertoire):
         reponse1=requests.get(urlfinal)
         if reponse1.ok:
             soup = bs(reponse1.content, "html.parser")
-            for img in soup.find_all("img"):#, "Extracting images"):
+            for img in tqdm(soup.find_all("img"), "Telechargement Page"+ str(j)):
                 img_url = img.attrs.get("src")
 
                 if not img_url or "mangapanda.com/" not in img_url:
