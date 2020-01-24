@@ -31,7 +31,7 @@ def telechargement(url, repertoire):
             ###############################################
 
             reponse2 = requests.get(img_url, stream=True)
-            reponse2.raw.decode_content = True a
+            reponse2.raw.decode_content = True 
 
             ### Nom du fichier ###
             ext= str(j) + ".jpg"
