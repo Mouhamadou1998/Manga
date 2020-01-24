@@ -8,11 +8,11 @@ RUN pip3 install beautifulsoup4
 
 RUN pip3 install tqdm
 
-ADD ./download.py /Manga
+ADD ./projet.py /Manga
 
 VOLUME /Manga
 
-ENTRYPOINT ["python3", "download.py" ]
+ENTRYPOINT ["python3", "projet.py" ]
 
 CMD ["$1" ,"$2"]
 
